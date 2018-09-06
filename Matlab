@@ -1,0 +1,48 @@
+clc % limpa tela.
+clear all % limpa variáveis e tela.
+
+sqrt(x) % raiz quadrada de x.
+exp(x) % e^x.
+
+format long % formato com 14 cassa depois do ponto.
+format short % formato com 4 cassa depois do ponto.
+
+abs(x) % valor positivo de x.
+log(x) % logaritimo de x.
+factorial(x) % fatorial de x.
+
+sin(x) % seno de x.                     |-----------------------|
+cos(x) % cosseno de x.             	    |   O valor de x deve	  |
+tg(x) % tangente de x.					        |						            |
+cotg(x) % cotangente de x.			      	|	estar em radianos:	  |
+asin(x) % inversa do seno de x.			    |					             	|
+acos(x) % inversa do cosseno de x.	  	|	pi, pi/2, pi/6	    	|
+sinh(x) % seno hiperbolico de x.	    	|					            	|
+cosh(x) % cosseno hiperbolico de x.		  |-----------------------|
+
+round(x) % arredonda para o inteiro mais próximo.
+fix(x) % arredonda para o inteiro positivo menor mais próximo.
+ceil(x) % arredonda para o inteiro positivo maior mais próximo.
+floor(x) % arredonda para o menor inteiro negativo
+rem(x, y) % resto da divis~so de x por y.
+sign(x) % retorna 1 se x > 0;
+				  0 se x = 0;
+				 -1 se x < 0.
+
+% N~so mexer com as variáveis:										
+	-ans;
+	-pi % 3.1416 (aproxmaiado);
+	-inf % infinito;
+	-i % número complexo (0 + 1i);
+	-j % número complexo (0 + 1i);
+	-NaN % Not a Number.
+
+vetor = [1 2 3 4] % lista de linha.	 ----------------> ans = 1 2 3 4
+		[1, 2, 3, 4] % funciona com vírgula.	         |-> ans = 7
+												                           |		     8
+vetor_coluna = [7; 8; 9].  ------------------------|         9
+
+vetor [2 4 6 8 10] = vetor [2:2:10]
+							| |	|--> número final
+							| |-----> valor adicionado
+							|-------> número inicial
