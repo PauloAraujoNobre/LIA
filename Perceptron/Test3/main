@@ -1,0 +1,23 @@
+from .treino import Treino
+import random
+import copy
+import numpy as np
+
+
+class main:
+
+    Amostras = np.genfromtxt('Amostras.csv', delimiter=',')
+    print(Amostras)
+    amostras = Amostras.copy()
+    target = amostras[:,0].copy()
+    amostras[:,0] = 0
+    [tamCol, tamRow] = Amostras.shape
+    print(tamCol)
+    print(tamRow)
+    target = Amostras[:,1]
+    pesos = random.uniform(1, tamCol)
+    taxaDeAprend = random.uniform(0, 1)
+    epocas = 0;
+    t = Treino(pesos, taxaDeAprend, target, tamCol, tamRow, amostras)
+    pesos = t.treinar()
+    print(pesos)
