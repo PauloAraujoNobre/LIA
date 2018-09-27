@@ -16,7 +16,7 @@ class Treino():
         for i in range(self.tamRow):
             erro = 1
             while erro == 1:
-                test = np.multiply(self.amostras[0], self.pesos)
+                test = np.multiply(self.amostras[i], self.pesos)
                 if(np.sum(test) > 0):
                     self.output = 1
                 else:
