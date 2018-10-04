@@ -1,0 +1,71 @@
+
+ 	   -1
+    w13  teta3
+x1------y3
+  \    /  \w35
+w14\  /    \
+    \/      \y5 teta5
+    /\      /y5	-1
+w23/  \    /
+  /    \  /w45
+x2------y4
+    w24  teta4
+	   -1
+
+
+Passo 1.0:
+ T = Somatorio(xi * wij) - tetaj
+ y3 = Sigmoid(T)
+
+ T = Somatorio(xi * wij) - tetaj
+ y4 = Sigmoid(T)
+
+Passo 1.1:
+ T = Somatorio(yi * wij) - teta j
+ y5 = sigmoid(T)
+
+Passo 2:
+ variacao5 = y5 * (1 - y5) * erro5	#Se existir erro5 => (saidaDesejada5 - saidaAtual5)
+
+Passo 2.2:
+ DeltaWjk = taxaDeAprend * yj * variacaok
+ 
+ DeltaW35 = taxaDeAprend * y3 * variaca5
+ DeltaW45 = taxaDeAprend * y4 * variaca5
+ 
+ DeltaTeta5 = taxaDeAprend * -1 * variacao5
+
+Passo 2.3:
+ variacaoj = yj * (1 - yj) * somatorio(variavaok * wjk)
+
+ variacao3 = y3 * (1 - y3) * variacao5 * w35
+ variacao4 = y4 * (1 - y4) * variacao5 * w45
+
+Passo 2.4:
+ DeltaWij = taxaDeAprend * xi * variacaoj
+
+ DeltaW13 = taxaDeAprend * x1 * variacao3
+ DeltaW23 = taxaDeAprend * x2 * variacao3
+
+ DeltaTeta3 = taxaDeAprend * -1 * variacao3
+
+
+ DeltaW14 = taxaDeAprend * x1 * variacao4
+ DeltaW24 = taxaDeAprend * x2 * variacao4
+
+ DeltaTeta4 = taxaDeAprend * -1 * variacao4
+
+Passo 3:
+ wjk(New) = wjk + DeltaWjk
+
+ w35 = w35 + DeltaW35
+ w45 = w45 + DeltaW45
+ teta5 = teta 5 + DeltaTeta5
+
+ w13 = w13 + DeltaW13
+ w23 = w23 + DeltaW23
+ teta3 = teta3 + DeltaTeta3
+
+ w14 = w14 + DeltaW14
+ w24 = w24 + DeltaW24
+ teta4 = teta4 + DeltaTeta4
