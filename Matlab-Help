@@ -12,13 +12,13 @@ log(x) % logaritimo de x.
 factorial(x) % fatorial de x.
 
 sin(x) % seno de x.                     |-----------------------|
-cos(x) % cosseno de x.             	    |   O valor de x deve	  |
-tg(x) % tangente de x.					        |						            |
-cotg(x) % cotangente de x.			      	|	estar em radianos:	  |
-asin(x) % inversa do seno de x.			    |					             	|
-acos(x) % inversa do cosseno de x.	  	|	pi, pi/2, pi/6	    	|
-sinh(x) % seno hiperbolico de x.	    	|					            	|
-cosh(x) % cosseno hiperbolico de x.		  |-----------------------|
+cos(x) % cosseno de x.             	|   O valor de x deve   |
+tg(x) % tangente de x.		        |	                |
+cotg(x) % cotangente de x.		|   estar em radianos:	|
+asin(x) % inversa do seno de x.		|			|
+acos(x) % inversa do cosseno de x.	|    pi, pi/2, pi/6	|
+sinh(x) % seno hiperbolico de x.	|			|
+cosh(x) % cosseno hiperbolico de x.	|-----------------------|
 
 round(x) % arredonda para o inteiro mais próximo.
 fix(x) % arredonda para o inteiro positivo menor mais próximo.
@@ -38,11 +38,11 @@ sign(x) % retorna 1 se x > 0;
 	-NaN % Not a Number.
 
 vetor = [1 2 3 4] % lista de linha.	 ----------------> ans = 1 2 3 4
-		[1, 2, 3, 4] % funciona com vírgula.	         |-> ans = 7
-												                           |		     8
+[1, 2, 3, 4] % funciona com vírgula.	           |-> ans = 7
+     					           |	     8
 vetor_coluna = [7; 8; 9].  ------------------------|         9
 
 vetor [2 4 6 8 10] = vetor [2:2:10]
-							| |	|--> número final
-							| |-----> valor adicionado
-							|-------> número inicial
+			    | |	|--> número final
+			    | |-----> valor adicionado
+			    |-------> número inicial
