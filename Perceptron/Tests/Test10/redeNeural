@@ -1,0 +1,81 @@
+import numpy as np
+
+
+class Perceptron():
+
+    def __init__(self, amostras, target):
+        self.amostras = amostras
+        self.target = target
+        self.epoch = 0
+        [self.row, self.col] = self.amostras.shape
+        self.learning_rate = np.random.rand(1, 1)
+        #self.weights1 = np.random.rand(3, 2)
+        self.weights1 = np.matrix([[1, 1], [2, 2], [3, 3]])
+        #self.weights2 = np.random.rand(2, 3)
+        self.weights2 = np.matrix([[1, 1, 1], [2, 2, 2]])
+        #print(self.weights1)
+        #print("\n")
+        #print(self.weights2)
+
+    def train(self):
+        self.count = 0
+        while self.count != self.row:
+            self.zera_count()
+            for i in range(self.row):
+                self.shuffle()
+                output = self.predict(i)
+
+                if (output != self.target[i]):
+                    self.train_weights(output, i)
+                else:
+                    self.count += 1
+
+            self.epoch += 1
+        return (self.weights, self.epoch)
+
+    def predict(self, i):
+        linha = self.amostras[i, :]
+        linha = linha[:, :-1]
+        print(linha)            #a = [x1, x2]
+        #print(self.weights1)    #w = [[w11, w21][w12, 22][w13, w23]]
+        y = np.multiply(linha, self.weights1)
+        y = np.sum(y, axis=1)
+
+        for k in range(len(y)):
+            y[i] = self.sigmoid(y[i])
+
+        #print(np.transpose(y))
+        #print("\n")
+        #print(self.weights2)    #w = [w31, w41, w51], [w32, w42, w52]
+
+        u = np.multiply(np.transpose(y), self.weights2)
+        #print("\n")
+        #print(u)
+        u = np.sum(u, axis=1)
+        u = self.sigmoid(u)
+        print(u) #y5
+        if activation >= 0:
+            return 1
+        else:
+            return 0
+
+    def train_weights(self, output, i):
+
+        erro = self.target[i] - output
+        n = self.learning_rate * erro
+
+        self.bias = self.bias + n
+
+        variation = np.multiply(self.amostras[i, :-1], n)
+        self.weights = np.add(variation, self.weights)
+
+
+    def zera_count(self):
+        self.count = 0
+
+    def shuffle(self):
+        np.random.shuffle(self.amostras)
+        self.target = self.amostras[:, -1]
+
+    def sigmoid(self, x):
+        return 1/(1+np.exp(-x))
