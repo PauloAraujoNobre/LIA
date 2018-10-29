@@ -1,0 +1,18 @@
+*Resumo:
+-Continuando pesquisas sobre filtragem por conteudo e filtragem colaborativa.
+
+*Anotações:
+-Filtragem colaborativa: As avaliações dos itens podem ser feitas de diversas maneiras. Como uma escala de pontuação baseado em 
+ estrelas, um íconecaracterizando gostei e não gostei (avaliação binária), ou até mesmo através da postagem de comentários sobre o 
+ item.
+ -Filtragem por conteudo: Já os SR que utilizam Filtragem Baseada em Conteúdo. Eles fazem a sugestão de itens que sejam semelhantes
+ aos que o usuário demonstrou interesse no passado, e/ou sobre as configurações de preferências do usuário. Assim, as recomendações
+ são personalizadas para cada usuário.
+
+ Por exemplo, os anúncios patrocinados nas redes sociais são filtrados de acordo com as características do perfil, incluindo 
+ histórico de postagens, amigos/seguidores e seguidos. O pressuposto para esse tipo de filtragem é que os usuários tendem a se 
+ interessar por itens semelhantes aos escolhidos no passado.
+ 
+ *Links:
+ http://igti.com.br/blog/como-funcionam-os-sistemas-de-recomendacao/
+ https://www.cin.ufpe.br/~rbcp/dissertacoes/dissertacaoIAS.pdf
