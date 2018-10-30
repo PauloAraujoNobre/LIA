@@ -1,0 +1,24 @@
+*Resumo:
+ -Pesquisando sobre RI's e FI's
+ -Continuando pesquisas sobre filtragem colaborativa.
+ 
+ *Anotações:
+ -RI(recuperação de Informação): A recuperação de informação atua quando um usuário descreve algum(ns) produto(s) e com base nas 
+  informações dadas, o sistema detectar o(s) produto(s). 
+ 
+  Os  sistemas  de  RI  não  distinguem  seus  usuários,  nem  identificam  seus interesses  individuais.  Desta  forma,  também  
+  não  são  capazes  de  conhecer  os  interesses  de longo  termo  de  cada  usuário,  mas  apenas  o  interesse  imediato  do 
+  momento em  que  uma busca é realizada.
+  
+ -FI(filtragem de Informação): A filtragem de informação atua com base no usuário, criando filtros como base de pesquisas, onde é 
+  capaz de alcançar a busca desejada ignorando informações descritivas, usando apenas filtros criados pelo históricos  e 
+  preferencias do usuário.
+  
+  --Os métodos acima não sao de devida eficiencia comparados com a FC(Filtragem Colaborativa)(KNN).
+  
+  *Metas:
+  -Controvérsia;
+  -KNN.
+  
+  *Links:
+  https://www.cin.ufpe.br/~rbcp/dissertacoes/dissertacaoIAS.pdf (Pag. 15).
