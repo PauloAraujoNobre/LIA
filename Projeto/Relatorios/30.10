@@ -6,9 +6,8 @@
  -RI(recuperação de Informação): A recuperação de informação atua quando um usuário descreve algum(ns) produto(s) e com base nas 
   informações dadas, o sistema detectar o(s) produto(s). 
  
-  Os  sistemas  de  RI  não  distinguem  seus  usuários,  nem  identificam  seus interesses  individuais.  Desta  forma,  também  
-  não  são  capazes  de  conhecer  os  interesses  de longo  termo  de  cada  usuário,  mas  apenas  o  interesse  imediato  do 
-  momento em  que  uma busca é realizada.
+ -Os sistemas de RI  não distinguem seus usuários, nem identificam seus interesses individuais. Desta forma, também não são capazes de
+  conhecer os interesses delongo termo de cada usuário, mas apenas o interesse imediato do moment em que um busca é realizada.
   
  -FI(filtragem de Informação): A filtragem de informação atua com base no usuário, criando filtros como base de pesquisas, onde é 
   capaz de alcançar a busca desejada ignorando informações descritivas, usando apenas filtros criados pelo históricos  e 
