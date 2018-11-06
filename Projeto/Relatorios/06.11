@@ -1,0 +1,26 @@
+*Resumo:
+ -Continuando pesquisas sobre filtragem colaborativa.
+ -Estudos voltados a diversos recursos para recomendações.
+ 
+*Anotações:
+ -Alvo da recomendação: Ator principal do processo e destinatário da recomendação.Pode receber passivamente as sugestões ou/e pode fornecer
+  suas opiniões sobre os itens da base de recomendação.
+
+ -Base de informação: Onde se encontra todas as escolhas e onde o alvo da recomendação deseja encontrar informação de seu interesse.
+
+ -Provedor de recomendações: Agente que pode recomendar itens da base de informação que têm maior relevância para alvo da recomendação.
+ 
+ -Provedores de preferência: todo processo de recomendação está baseado em indicadores humanos de preferência. Assim, os provedores de 
+  preferência são tipicamente um conjunto de pessoas em cujas opiniões o provedor de recomendações pode se basear para fazer as sugestões.
+  
+ -FC(Filtragem Colaborativa): Formação de vizinhança: para fazer a recomendação o sistema compara o perfil do usuário alvo com os perfis 
+  de outros usuários do sistema para encontrar a similaridade entre eles. Existem várias formas de calcular esse conjunto de usuários 
+  similares, ao qual chamaremos de vizinhança.
+  
+  -Img 3.1(Pág 30): https://www.cin.ufpe.br/~rbcp/dissertacoes/dissertacaoIAS.pdf
+*Metas:
+ -KNN.
+ -Pág 31: https://www.cin.ufpe.br/~rbcp/dissertacoes/dissertacaoIAS.pdf
+ 
+*Links:
+ -https://www.cin.ufpe.br/~rbcp/dissertacoes/dissertacaoIAS.pdf (Pág 31).
