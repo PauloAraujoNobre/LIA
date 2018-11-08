@@ -1,0 +1,24 @@
+*Resumo:
+ -Continuando pesquisas sobre filtragem colaborativa.
+ -Continuando estudos voltados a diversos recursos para recomendações.
+
+*Anotações:
+ -Sa,u = ∑(i=1 até m)[(Ra,i - Ra)(Ru,i - Ru)]/raiz{∑(i=1 até m)[(Ra,i - Ra)]² ∑(i=1 até m)[(Ru,i - Ru)²]}
+  m = quantidade de produtos;
+  Ra,i = avaliação de a em i;
+  Ra = média de avaliações de a;
+  Ru,i = avaliação de u em i;
+  Ru = média de avaliações de u;
+  Logo: É calculada a relação de vizinhaça entre a e u.
+  
+ -Quando é usado um m muito pequeno, pode apresentar erro, assim nasce a seguinte penalidade:
+  Sa,u = Sa,u/50-m, se m < 50;
+       = Sa,u, se m >= 50;
+       
+*Metas:
+-KNN;
+-Open-path forest;
+
+*Links:
+ -https://www.cin.ufpe.br/~rbcp/dissertacoes/dissertacaoIAS.pdf;
+ -https://www.youtube.com/watch?v=IdLrgnb3HVc.
