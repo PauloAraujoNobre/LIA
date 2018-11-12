@@ -1,0 +1,13 @@
+*Resumo:
+ -Continuando pesquisas sobre filtragem colaborativa;
+ -Inicializando implementação do KNN.
+
+*Anotações:
+ -Desenvolvimento do KNN: ∑{raiz[(x1 - x2)²]}.
+
+*Metas
+ -Pág 31: https://www.cin.ufpe.br/~rbcp/dissertacoes/dissertacaoIAS.pdf;
+ -Tabela de afinidade KNN.
+
+*Links:
+ -https://www.youtube.com/watch?v=KBh4vnsCDc4.
