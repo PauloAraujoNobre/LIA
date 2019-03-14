@@ -7,19 +7,6 @@ from scipy.interpolate import make_interp_spline, BSpline
 def set_weigth_mes():
     weigth = []
 
-    # Jan ~ (4.2 - 5.5)
-    # Fer ~ (3.6 - 4.4)
-    # Mar ~ (2.6 - 3.4)
-    # Abr ~ (3.4 - 4.2)
-    # Mai ~ (2.2 - 2.8)
-    # Jun ~ (1.8 - 2.6)
-    # Jul ~ (3.6 - 4.4)
-    # Ago ~ (2.6 - 3.4)
-    # Set ~ (2.0 - 2.8)
-    # Out ~ (3.0 - 3.8)
-    # Nov ~ (3.6 - 4.4)
-    # Dez ~ (4.6 - 5.2)
-
     for i in range(12):
         if i == 0:
             weigth.append(np.random.uniform(4.2, 5.0))
@@ -46,7 +33,7 @@ def set_weigth_mes():
         if i == 11:
             weigth.append(np.random.uniform(4.6, 5.2))
 
-    # print(weigth, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+
     return weigth
 
 
@@ -57,9 +44,9 @@ def set_qnt_UF_mes(n_anos):
 
     for i in range(26):
         weigth = set_weigth_mes()
-        weight = np.array(weigth) * 2
+        weight = np.divide(weigth, 5)
         for j in range(n_anos * 12):
-            qnt = np.random.randint(35, 85)
+            qnt = np.random.randint(15, 125)
             valor = float("{0:.2f}".format(qnt * weigth[j % 12]))
             messes.append(valor)
         UF_mes.insert(i, messes)
@@ -79,26 +66,31 @@ if __name__ == '__main__':
     # n_produtos = int(input())
     # n_anos = int(input())
     n_empresas = 1
-    n_produtos = 2
-    n_anos = 5
+    n_produtos = 1
+    n_anos = 3
 
     for i in range(n_empresas):
         for j in range(n_produtos):
             produtos.append(set_qnt_UF_mes(n_anos))
         empresas.append(produtos)
+        produtos = []
 
-    T = [0] * (n_anos * 12)
+    media = [0] * (n_anos * 12)
 
     for i in range(len(empresas)):
         for j in range(len(empresas[i])):
-            print("\nProcuto {}\n".format(j + 1))
+            #print("\nProcuto {}\n".format(j + 1))
             for k in range(len(empresas[i][j])):
-                T = np.add(empresas[i][j][k], T)
-            list_x = [c for c in range(len(T))]
-            list_y = T
-            plt.figure()
-            poly = np.polyfit(list_x,list_y,7)
+                #print(empresas[i][j][k])
+                media = np.add(empresas[i][j][k], media)
+            media = np.divide(media, 26)
+            list_x = [c for c in range(len(media))]
+            list_y = media
+            poly = np.polyfit(list_x, list_y, 7)
             poly_y = np.poly1d(poly)(list_x)
             plt.plot(list_x,poly_y)
-            plt.plot(list_x,list_y)
-            plt.show()
+            plt.plot(list_x, list_y)
+            plt.title("Amostra de Produtos ao Mês")
+            plt.xlabel("Messes")
+            plt.ylabel("Produtos")
+        plt.show()
