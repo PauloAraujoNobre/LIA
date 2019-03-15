@@ -1,7 +1,9 @@
+import pylab
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.interpolate import spline
 from scipy.interpolate import make_interp_spline, BSpline
+from scipy.interpolate import interp1d
 
 
 def set_weigth_mes():
@@ -33,7 +35,6 @@ def set_weigth_mes():
         if i == 11:
             weigth.append(np.random.uniform(4.6, 5.2))
 
-
     return weigth
 
 
@@ -44,9 +45,9 @@ def set_qnt_UF_mes(n_anos):
 
     for i in range(26):
         weigth = set_weigth_mes()
-        weight = np.divide(weigth, 5)
+        weight = np.divide(weigth, 2)
         for j in range(n_anos * 12):
-            qnt = np.random.randint(15, 125)
+            qnt = np.random.randint(15, 225)
             valor = float("{0:.2f}".format(qnt * weigth[j % 12]))
             messes.append(valor)
         UF_mes.insert(i, messes)
@@ -56,41 +57,86 @@ def set_qnt_UF_mes(n_anos):
     return UF_mes
 
 
-if __name__ == '__main__':
+def set_dataset(vetor_prod, n_anos):
 
     empresas = []
     produtos = []
     UF_mes = []
 
-    # n_empresas = int(input())
-    # n_produtos = int(input())
-    # n_anos = int(input())
-    n_empresas = 1
-    n_produtos = 1
-    n_anos = 3
+    n_empresas = len(vetor_prod)
+    n_produtos = vetor_prod
+    # n_empresas = 2
+    # n_produtos = 3
+    # n_anos = 1
 
     for i in range(n_empresas):
-        for j in range(n_produtos):
+        for j in range(vetor_prod[i]):
             produtos.append(set_qnt_UF_mes(n_anos))
         empresas.append(produtos)
         produtos = []
 
     media = [0] * (n_anos * 12)
+    legend = []
 
+    arq1 = open('Mocks.txt', 'w')
+    # print("Without Smooth Curve Grafics:")
     for i in range(len(empresas)):
+        arq1.write('\nEmpresa {}\n'.format(i + 1))
+        # print("\nEmpresa {}\n".format(i+1))
         for j in range(len(empresas[i])):
-            #print("\nProcuto {}\n".format(j + 1))
+            arq1.write('\nProduto {}\n'.format(j + 1))
+            # print("\nProduto {}\n".format(j+1))
             for k in range(len(empresas[i][j])):
+                arq1.write('{}'.format(empresas[i][j][k]))
                 #print(empresas[i][j][k])
                 media = np.add(empresas[i][j][k], media)
             media = np.divide(media, 26)
             list_x = [c for c in range(len(media))]
             list_y = media
-            poly = np.polyfit(list_x, list_y, 7)
-            poly_y = np.poly1d(poly)(list_x)
-            plt.plot(list_x,poly_y)
             plt.plot(list_x, list_y)
-            plt.title("Amostra de Produtos ao Mês")
-            plt.xlabel("Messes")
-            plt.ylabel("Produtos")
+
+
+        plt.title("Amostra de Produtos ao Mês(Without Smooch Curve)")
+        plt.xlabel("Messes")
+        plt.ylabel("MPE(Média de Produtos de todos Estado)")
         plt.show()
+    arq1.close()
+
+    # arq2 = open('WithSmoochCurveGrafics.txt', 'w')
+    # print("With Smooch Curve Grafics:")
+    for i in range(len(empresas)):
+        # arq2.write('\nEmpresa {}\n'.format(i + 1))
+        # print("\nEmpresa {}\n".format(i + 1))
+        for j in range(len(empresas[i])):
+            # arq2.write('\nProduto {}\n'.format(j + 1))
+            # print("\nProduto {}\n".format(j+1))
+            for k in range(len(empresas[i][j])):
+                # arq2.write('{}'.format(empresas[i][j][k]))
+                # print(empresas[i][j][k])
+                media = np.add(empresas[i][j][k], media)
+            media = np.divide(media, 26)
+            list_x = [c for c in range(len(media))]
+            list_y = media
+            tam = len(list_y)
+            xnew = np.linspace(1, tam, num=150, endpoint=True)
+            x = np.linspace(1, tam, tam)
+            f2 = interp1d(x, list_y, kind='cubic')
+            plt.plot(xnew, f2(xnew))
+
+        plt.legend(["Produto A", "Produto B", "Produto C"])
+        plt.title("Amostra de Produtos ao Mês(With Smooch Curve)")
+        plt.xlabel("Messes")
+        plt.ylabel("MPE(Média de Produtos de todos Estado)")
+        plt.show()
+
+    # arq2.close()
+    return empresas
+
+if __name__ == '__main__':
+
+    vetor_prod = [3, 4, 5]
+    n_anos = 5
+    dataset = set_dataset(vetor_prod, n_anos)
+    print(dataset)
+
+
