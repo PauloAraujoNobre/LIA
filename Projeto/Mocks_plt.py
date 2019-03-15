@@ -150,4 +150,10 @@ if __name__ == '__main__':
     vetor_prod = [1, 2, 3, 4]
     n_anos = 2
     dataset = set_dataset(vetor_prod, n_anos)
-    print(dataset)
+    #print(dataset)
+    for i in range(len(dataset)):
+        print("Empresa {}\n".format(i+1))
+        for j in range(len(dataset[i])):
+            print("Produto {}\n".format(j + 1))
+            for k in range(len(dataset[i][j])):
+                print(dataset[i][j][k])
