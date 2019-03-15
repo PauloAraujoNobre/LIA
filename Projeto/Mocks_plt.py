@@ -6,6 +6,17 @@ from scipy.interpolate import make_interp_spline, BSpline
 from scipy.interpolate import interp1d
 
 
+def n_to_str(a):
+    letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
+              'V', 'W', 'X', 'Y', 'Z']
+    str_pdr = "Produto "
+    b = []
+    for i in range(a):
+        b.append(str_pdr + letras[i])
+
+    return b
+
+
 def set_weigth_mes():
     weigth = []
 
@@ -58,7 +69,6 @@ def set_qnt_UF_mes(n_anos):
 
 
 def set_dataset(vetor_prod, n_anos):
-
     empresas = []
     produtos = []
     UF_mes = []
@@ -88,17 +98,18 @@ def set_dataset(vetor_prod, n_anos):
             # print("\nProduto {}\n".format(j+1))
             for k in range(len(empresas[i][j])):
                 arq1.write('{}'.format(empresas[i][j][k]))
-                #print(empresas[i][j][k])
+                # print(empresas[i][j][k])
                 media = np.add(empresas[i][j][k], media)
             media = np.divide(media, 26)
             list_x = [c for c in range(len(media))]
             list_y = media
             plt.plot(list_x, list_y)
 
-
         plt.title("Amostra de Produtos ao Mês(Without Smooch Curve)")
         plt.xlabel("Messes")
         plt.ylabel("MPE(Média de Produtos de todos Estado)")
+        plt.ylim(0, np.max(media) * 2)
+        plt.legend(n_to_str(n_empresas))
         plt.show()
     arq1.close()
 
@@ -127,16 +138,16 @@ def set_dataset(vetor_prod, n_anos):
         plt.title("Amostra de Produtos ao Mês(With Smooch Curve)")
         plt.xlabel("Messes")
         plt.ylabel("MPE(Média de Produtos de todos Estado)")
+        plt.ylim(0, np.max(media) * 2)
+        plt.legend(n_to_str(n_empresas))
         plt.show()
 
     # arq2.close()
     return empresas
 
-if __name__ == '__main__':
 
-    vetor_prod = [3, 4, 5]
-    n_anos = 5
+if __name__ == '__main__':
+    vetor_prod = [1, 2, 3, 4]
+    n_anos = 2
     dataset = set_dataset(vetor_prod, n_anos)
     print(dataset)
-
-
