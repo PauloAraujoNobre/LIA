@@ -1,0 +1,17 @@
+Criação da base de dados
+	Resumo: Para o âmbito de treinar a rede, é necessário uma base de dados para testes. Um algoritmo que recebe um sequencia especifica de 
+          informações, desde ela, quantidade de empresas, quantidade deprodutos e número de anos, e em seguida, devolve informações para 
+          serem usadas na rede devidamente relacionados com as informações dada na entrada.
+
+	Entrada: O algoritmo receberá uma sequência de informações desejadas de maneira única. Oferecendo-lhe um vetor de 2(duas) posições, no 
+           qual, a primeira é um vetor onde cada índice desse vetor representa uma empresa, trivialmente o índice é equivalente ao número de 
+           produtos desta empresa, e a segunda, refere-se a quantidade de anos.
+
+	Funcionamento: O algoritmo inicia recriando valores pseudo-aleatorios(Valores aleatorios com medidas maximas e minimas), onde sao 
+                 multiplicados porum vetor de pesos também peseudo-aleatorios(O vetor de pesos é um vetor de fator multiplicativo para 
+                 criar deslises com base nos messes), no qual, são inseridos em matrizes de UFs(26(vinte e seis) UFs fixas) por messes(12(doze) vezes a quantidades de anos), formando matrizes peseudo-aleatorias para cada produto de uma empresa, confortando as quantidades de empresas, produtos e anos das informações inseridas na entrada.
+
+	Sáida: O algoritmo retorná um vetor de empresas, onde cada índice desse vetor representa uma empresas, por conseguinte, o vetor de 
+         empresas representa em cada um de seus índices, um vetor de produtos, no qual, cada posição deste vetor, é equivalente a um 
+         produto do mesmo, e por final, o vetor de produtos é representado por matrizes em cada um de seus índices, representando nesta 
+         matriz Ufs por mês.
