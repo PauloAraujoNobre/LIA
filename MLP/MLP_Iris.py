@@ -2,7 +2,7 @@ import os
 import tensorflow as tf
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
-
+#OBS: Usar o tensorflow na sua versão 1.14!
 
 # Como nosso dataset contem string na coluna Y (classes) faremos uma substituicao (encode) da string por um vetor
 def label_encode(label):
