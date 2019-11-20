@@ -8,8 +8,8 @@ from keras.optimizers import RMSprop
 from numpy import float32
 import numpy as np
 batch_size = 128
-num_classes = 10
-epochs = 20
+num_classes = 1
+epochs = 10000
 
 f = open("train_data.csv","r")
 train_data = []
@@ -33,20 +33,18 @@ y_train = train_data[:,-1]
 x_test = test_data[:,:-1]
 y_test = test_data[:,-1]
 
-print(x_train.shape)
-
 model = Sequential()
 model.add(Dense(30, activation='sigmoid'))
-model.add(Dense(10, activation='sigmoid'))
-model.add(Dense(5, activation='sigmoid'))
-model.add(Dense(1, activation='sigmoid'))
+model.add(Dense(7, activation='sigmoid'))
+model.add(Dense(4, activation='sigmoid'))
+model.add(Dense(num_classes, activation='sigmoid'))
 
 model.compile(loss='mean_squared_error',
               optimizer='sgd',
               metrics=['accuracy'])
 
 history = model.fit(x_train, y_train,
-                    epochs=100000,
+                    epochs=epochs,
                     verbose=1,
                     validation_data=(x_test, y_test))
 
