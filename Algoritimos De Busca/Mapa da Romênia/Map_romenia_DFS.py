@@ -99,12 +99,14 @@ if __name__ == '__main__':
     cidade_vis = []
     cidade_aux = cidade
     caminho = []
-    #local_atual = (input("Qual a cidade atual :"))
-    #destino_local = (input("Qual a cidade de destino desejada :"))
+    print("0 - Oradea\n1 - Zerind\n2 - Arad\n3 - Timisoara\n4 - Sibiu\n5 - Lugoj\n6 - Mehadia\n7 - Dobreta\n8 - Caraiova\n9 - Rimnieu\n10 - Fagaras\n11 - Pitesti\n12 - Bucareste\n13 - Giurgiu\n14 - Urziceni\n15 - Hirsova\n16 - Eforie\n17 - Vaslui\n18 - Iasi\n19 - Neant")
+    local_atual = int(input("Qual a cidade atual: "))
+    destino_local = int(input("Qual a cidade de destino desejada: "))
+    # print("{} - {}".format(local_atual, destino_local))
     #local_atual = nome(local_atual)
     #destino_local = nome(destino_local)
-    local_atual = 0
-    destino_local = 2
+    # local_atual = 0
+    # destino_local = 2
     local_atual_aux = local_atual
     trail = [local_atual]
 
